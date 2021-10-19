@@ -1,3 +1,4 @@
+import { log } from '@graphprotocol/graph-ts'
 import { NewGravatar, UpdatedGravatar } from '../generated/Gravity/Gravity'
 import { Gravatar } from '../generated/schema'
 
@@ -6,6 +7,7 @@ export function handleNewGravatar(event: NewGravatar): void {
   gravatar.owner = event.params.owner
   gravatar.displayName = event.params.displayName
   gravatar.imageUrl = event.params.imageUrl
+  // log.info('hi', [])
   gravatar.save()
 }
 
